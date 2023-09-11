@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando box model css</title>
+    <style>
+           header {
+
+            /*borda é o espaçamento que fica logo após o PADDING*/
+            border: 1px solid red;
+
+            /*PADDING é  espaçamento entre o elemento e sua borda
+            informando apenas um valor será aplicado a todos os lados.
+            Na ordem fica: padding: 10px; (acima), 10px; (direita),
+            10px; (abaixo), 10px; (esquerda)
+            (sentido anti-horário) */
+            padding: 60px;
+
+            /*MARGIN se refere ao espaçamento dos limites da tela
+            para o começo da parte visual da página (BORDER)*/
+            margin: 20px;
+        }
+
+        h1 {
+
+            /*borda de 1px, tracejada e verde*/
+            border: 1px dashed green;
+
+            /*altura ocupada pelo elemento <h1>*/
+            height: 60px;
+
+            /*PADDING, espaçamento entre meu elemento e a BORDA
+            do próprio elemento*/
+            padding: 15px;
+        
+        }
+
+        p {
+
+            /*como já foi aplicado um PADDING 60px no meu elemento header
+            esse MARGIN forçará meu elemento <p> a diminuir suas laterais
+            MARGIN-LEFT e MARGIN-RIGHT*/
+            margin: 20px;
+            border: 1px solid purple;
+            padding: 5px;
+            
+        }
+
+        img {
+            margin-left: 250px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!--a tag <h1/> por padrão é display BLOCK;-->
+        <h1>Título</h1>
+
+        <!--a tag <p/> também por padrão é display BLOCK-->
+        <p>
+            <!--A tag <span> por padrão é display INLINE-->
+            <span>
+                Informação
+            </span>
+            
+            <span>
+                extra
+            </span>
+        </p>
+    </header>
+<img src="../css/img/conceito-box-model-css.PNG" alt="Exemplo box model">
+</body>
+</html>
+

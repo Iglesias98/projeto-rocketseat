@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*Estou definindo que a medida virá da borda*/
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white;
+    --bg-url: url(../assets/assets/bg-mobile.jpg);
+    --stroke-color: rgba( 255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(../assets/assets/moon-stars.svg)
+
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(../assets/assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(../assets/assets/sun.svg)
+}
+
+body {
+    /*
+    background-image: url(../assets/assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    /*cobre todo o espaço visível
+    background-size: cover;*/
+
+    /*todas as propriedade acima foram feitas apenas nessa linha de código abaixo*/
+    background: var(--bg-url) no-repeat top center/cover;
+
+}
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+/*divs por padrão são elementos display: block;*/
+#container {
+    width: 360px;
+    
+    /*aplica margem automática no sentido horizontal, 
+    centraliza automaticamente (horizontal)*/
+    /*aplicando margem em cima, nas laterais e em baixo*/
+    margin: 56px auto 0px;
+
+    padding: 0 24px;
+    
+}
+
+/*imagens por padrão são um elemento display: inline;
+em elementos diaplay: inline; não conseguimos aplicar o margin: auto;
+por isso precisei mudar o display da img para block, para poder aplicar margin: auto;
+
+OBS: Elementos inline que são filhos de elementos pai com display: block;
+eu posso definir a configuração do elemento filho, no elemento pai:
+ficaria: #profile { text-align: center} dessa forma a imagem também iria centralizar*/
+
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    display: block;
+    width: 100px;
+    margin: auto;
+    border-radius: 30px;
+    
+    
+}
+
+#profile p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+#switch { 
+    margin: 4px auto;
+    position: relative;
+    width: 64px;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    top: 50%;
+    
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.light #switch button { 
+    right: 0;
+    left: initial;
+    
+}
+
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}   
+
+/*links*/
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0px;
+}
+
+ul li a{
+    /*ocupa os 360px por conta da width do container*/
+    display: flex; /*flex-direction padrão (row)*/
+    justify-content: center; /*em relação ao eixo horizontal*/
+    align-items: center; /*em relação ao eixo vertical*/
+
+    padding: 16px 24px;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: 500;
+    
+    backdrop-filter: blur(5px);
+
+    /*efeito de transição no background dos meus links*/
+    transition: background 0.3s;
+}
+
+
+/*pseudo-selector*/
+ul li a:hover {
+    
+    background: var(--surface-color-hover);
+    border: 1.5px solid white;
+}
+
+/*usando o ionicons*/
+#social-links {
+    display: flex;
+    justify-content: center;
+    
+    padding: 24px 0;
+    font-size: 24px;
+    transition: background 0.3s;
+    
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+}
+
+#social-links a:hover { 
+  background: var(--highlight-color);
+  padding: 16px;
+  border-radius: 50%;
+
+}
+
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+    
+}
+
