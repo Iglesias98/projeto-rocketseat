@@ -37,6 +37,8 @@ body {
     /*todas as propriedade acima foram feitas apenas nessa linha de código abaixo*/
     background: var(--bg-url) no-repeat top center/cover;
 
+    height: 100vh;
+
 }
 body * {
     font-family: 'Inter', sans-serif;
@@ -195,3 +197,4 @@ footer {
     
 }
 
+/*media queries*/
