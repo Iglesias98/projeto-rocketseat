@@ -44,8 +44,8 @@ body * {
 }
 /*divs por padrão são elementos display: block;*/
 #container {
-    width: 360px;
-    
+    width: 100%;
+    max-width: 588px;
     /*aplica margem automática no sentido horizontal, 
     centraliza automaticamente (horizontal)*/
     /*aplicando margem em cima, nas laterais e em baixo*/
